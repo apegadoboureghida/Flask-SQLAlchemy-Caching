@@ -131,7 +131,15 @@ class CachingQuery(BaseQuery):
         stmt = self.with_labels().statement
         # key = str(stmt.compile(compile_kwargs={'literal_binds': True}))
         # UUID class does not implement process_literal_param
-        key = str(stmt.compile(compile_kwargs={'literal_binds': False}))
+        #return md5(key.encode('utf8')).hexdigest()
+
+        compiled = stmt.compile()
+        params = compiled.params
+
+        values = [str(compiled)]
+        for k in sorted(params):
+            values.append(repr(params[k]))
+        key = u" ".join(values)
         return md5(key.encode('utf8')).hexdigest()
 
 
