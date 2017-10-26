@@ -1,7 +1,7 @@
 Flask-SQLAlchemy-Caching
 ========================
 
-This is a fork of (iurisilvio's Flask-SQLAlchemy-Cache)[https://github.com/iurisilvio/Flask-SQLAlchemy-Cache]
+This is a fork of (youversion's Flask-SQLAlchemy-Cache)[https://github.com/youversion/Flask-SQLAlchemy-Caching]
 
 A CachingQuery implementation to Flask using Flask-SQLAlchemy and Flask-Caching.
 
